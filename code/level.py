@@ -7,7 +7,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 from code.entity import Entity
 from code.entityFactory import EntityFactory
-from code.Const import COLOR_WHITE, WIN_HEIGHT
+from code.Const import COLOR_WHITE, WIN_HEIGHT, EVENT_ENEMY, SPAWN_TIME
 
 class Level:
     def __init__(self, window, name, game_mode):
@@ -17,11 +17,13 @@ class Level:
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('lvl1-'))
+        self.entity_list.append(EntityFactory.get_entity('player'))
+        pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME['enemy'])
 
     def run(self):
         clock = pygame.time.Clock()
         while True:
-            clock.tick(30)
+            clock.tick(60)
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
@@ -29,6 +31,8 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    self.entity_list.append(EntityFactory.get_entity('enemy'))
                 
             # printed text
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', COLOR_WHITE, (10, 5))
