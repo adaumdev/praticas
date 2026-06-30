@@ -4,6 +4,7 @@ import pygame
 COLOR_L_BLUE = (102, 130, 219)
 COLOR_WHITE = (255, 255, 255)
 COLOR_YELLOW = (255, 234, 77)
+COLOR_PURPLE = (110, 3, 199)
 
 # E
 
@@ -25,9 +26,29 @@ ENTITY_HEALTH = {
     'lvl1-1': 999,
     'lvl1-2': 999,
     'lvl1-3': 999,
-    'player': 25,
-    'enemy': 10,
-    'item': 999
+    'player': 200,
+    'enemy': 100,
+    'item': 1
+}
+
+ENTITY_DAMAGE = {
+    'lvl1-0': 0,
+    'lvl1-1': 0,
+    'lvl1-2': 0,
+    'lvl1-3': 0,
+    'player': 1,
+    'enemy': 20,
+    'item': 0
+}
+
+ENTITY_SCORE = {
+    'lvl1-0': 0,
+    'lvl1-1': 0,
+    'lvl1-2': 0,
+    'lvl1-3': 0,
+    'player': 0,
+    'enemy': 0,
+    'item': 1
 }
 
 

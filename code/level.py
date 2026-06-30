@@ -7,7 +7,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 from code.entity import Entity
 from code.entityFactory import EntityFactory
-from code.Const import COLOR_WHITE, WIN_HEIGHT, EVENT_ENEMY, EVENT_ITEM, SPAWN_TIME
+from code.Const import COLOR_PURPLE, COLOR_WHITE, WIN_HEIGHT, EVENT_ENEMY, EVENT_ITEM, SPAWN_TIME
 from code.entityMediator import EntityMediator
 
 class Level:
@@ -29,6 +29,11 @@ class Level:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                
+                if ent.name == 'player':
+                    self.level_text(14, f'Player - Health: {ent.health} | Score: {ent.score}' , COLOR_PURPLE, (10, 25))
+
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
