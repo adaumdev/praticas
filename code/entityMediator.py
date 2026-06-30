@@ -15,7 +15,7 @@ class EntityMediator:
     def verify_collision(entity_list: list[Entity]):
         for i in range(len(entity_list)):
             test_entity = entity_list[i]
-            EntityMediator.__veerify_collision_window(test_entity)
+            EntityMediator.__verify_collision_window(test_entity)
 
     @staticmethod
     def verify_health(entity_list: list[Entity]):

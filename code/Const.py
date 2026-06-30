@@ -17,7 +17,7 @@ ENTITY_SPEED = {
     'lvl1-3': 3,
     'player': 3,
     'enemy': 3,
-    'item': 4
+    'item': 1
 }
 
 ENTITY_HEALTH = {
