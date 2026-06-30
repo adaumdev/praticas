@@ -74,13 +74,6 @@ MENU_OPTION = ('START',
                'SCORE',
                'EXIT')
 
-
-# s
-
-SPAWN_TIME = {'enemy': 1000,
-              'item': 3000
-}
-
 # T
 TIMEOUT_STEP = 100
 TIMEOUT_LEVEL = 20000
@@ -88,3 +81,23 @@ TIMEOUT_LEVEL = 20000
 # W
 WIN_WIDTH = 576
 WIN_HEIGHT = 324
+
+# S
+
+SPAWN_TIME = {'enemy': 1000,
+              'item': 3000
+}
+
+SCORE_POS ={'Title': (WIN_WIDTH/2, 50),
+            'EnterName': (WIN_WIDTH/2, 80),
+            'Label': (WIN_WIDTH/2, 90),
+            'Name': (WIN_WIDTH/2, 110),
+            0: (WIN_WIDTH/2, 130),
+            1: (WIN_WIDTH/2, 150),
+            2: (WIN_WIDTH/2, 170),
+            3: (WIN_WIDTH/2, 190),
+            4: (WIN_WIDTH/2, 210),
+            5: (WIN_WIDTH/2, 230),
+            6: (WIN_WIDTH/2, 250),
+            7: (WIN_WIDTH/2, 270),           
+            }
